@@ -14,6 +14,6 @@ RUN apk add --update --no-cache nodejs npm ffmpeg \
     npm install -g node-gyp && \
     npm install && \
     npm run build
-COPY . .
+COPY dist .
 
 CMD [ "npm", "run", "start" ]
