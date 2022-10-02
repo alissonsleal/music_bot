@@ -39,10 +39,10 @@ const player = new Player(client, {
 client.player = player
 
 client.on('ready', async () => {
-  console.log('ready')
+  console.log('[⚡ Server] Server is ready!')
 
   try {
-    console.log('Started refreshing application (/) commands.')
+    console.log('[⚡ Server] Started refreshing application (/) commands.')
 
     const guildIds = client.guilds.cache.map((guild) => guild.id)
 
@@ -59,9 +59,11 @@ client.on('ready', async () => {
       })
     })
 
-    console.log('Successfully reloaded application (/) commands.')
-  } catch (error) {
-    console.error(error)
+    console.log('[⚡ Server] Successfully reloaded application (/) commands.')
+  } catch (error: any) {
+    console.error(
+      `[⚡ Server] Could not refresh application (/) commands. Please check your token and client ID. Error: ${error.stack}`,
+    )
   }
 })
 
@@ -75,9 +77,13 @@ client.on('interactionCreate', async (interaction) => {
   if (!command) return
 
   try {
+    console.log(`[⚡ Discord] Executing command "${commandName}" from ${interaction.user.tag}`)
+
     await command[commandName].execute(interaction)
-  } catch (error) {
-    console.error(error)
+  } catch (error: any) {
+    console.error(
+      `[⚡ Discord] Error while executing command "${commandName}" from ${interaction.user.tag}, Error: ${error.stack}`,
+    )
     await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true })
   }
 })
