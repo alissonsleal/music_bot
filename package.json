@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register dist/index.js",
     "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules -r tsconfig-paths/register src/index.ts",
-    "build": "rimraf dist dist && tsc",
+    "build": "rimraf dist && tsc",
     "prettier": "prettier --write src/**/*.js"
   },
   "dependencies": {
