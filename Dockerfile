@@ -3,6 +3,7 @@ FROM alpine
 WORKDIR /usr/src/app
 
 COPY package*.json ./
+COPY tsconfig.json ./
 
 RUN apk add --update --no-cache nodejs npm ffmpeg \
     make \
