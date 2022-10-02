@@ -18,8 +18,6 @@ export const queue = {
     const currentTrack = queue.current
     const tracks = queue.tracks
 
-    console.log({ currentTrack })
-
     const embed = new EmbedBuilder().setTitle('Playlist Queue').setDescription(
       `**Now Playing** ${currentTrack.title} - ${currentTrack.requestedBy}\n\n` +
         tracks
