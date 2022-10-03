@@ -62,6 +62,7 @@ export const cair = {
 
     return interaction.reply({
       content: `Rápido, ${interaction.user} saia da sala quando o bot cair!`,
+      ephemeral: true,
     })
   },
 }
