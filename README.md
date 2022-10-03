@@ -16,7 +16,8 @@ CLIENT_ID=
 ### With Docker
 
 ```sh
-docker-compose up -d
+docker build -t music_bot .
+docker run -d --name music_bot music_bot
 ```
 
 ### Without Docker
