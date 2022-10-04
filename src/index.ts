@@ -49,7 +49,7 @@ client.on('ready', async () => {
     const body = commands.map((command: any) => {
       return {
         ...command,
-        default_permission: false,
+        default_permission: true,
       }
     })
 
