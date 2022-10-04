@@ -2,7 +2,7 @@ require('dotenv').config()
 
 import { REST } from '@discordjs/rest'
 import { Routes } from 'discord-api-types/v9'
-import { Client, Collection, GatewayIntentBits } from 'discord.js'
+import { ActivityType, Client, Collection, GatewayIntentBits } from 'discord.js'
 import { Player } from 'discord-player'
 import { environment } from './environment'
 
@@ -45,6 +45,11 @@ client.on('ready', async () => {
     console.log('[⚡ Server] Started refreshing application (/) commands.')
 
     const guildIds = client.guilds.cache.map((guild) => guild.id)
+
+    client.user?.setActivity({
+      name: '/play',
+      type: ActivityType.Playing,
+    })
 
     const body = commands.map((command: any) => {
       return {
