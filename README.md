@@ -44,35 +44,35 @@ yarn start
 
 - [x] `/queue` - Shows the current queue
 
-- [] `/nowplaying` - Shows the current song
+- [ ] `/nowplaying` - Shows the current song
 
-- [] `/pause` - Pauses the music
+- [ ] `/pause` - Pauses the music
 
-- [] `/resume` - Resumes the music
+- [ ] `/resume` - Resumes the music
 
-- [] `/volume` - Changes the volume
+- [ ] `/volume` - Changes the volume
 
-- [] `/loop` - Loops the current song
+- [ ] `/loop` - Loops the current song
 
-- [] `/shuffle` - Shuffles the queue
+- [ ] `/shuffle` - Shuffles the queue
 
-- [] `/remove` - Removes a song from the queue
+- [ ] `/remove` - Removes a song from the queue
 
-- [] `/seek` - Seeks to a specific time in the current song
+- [ ] `/seek` - Seeks to a specific time in the current song
 
-- [] `/lyrics` - Shows the lyrics of the current song
+- [ ] `/lyrics` - Shows the lyrics of the current song
 
-- [] `/search` - Searches for a song on youtube
+- [ ] `/search` - Searches for a song on youtube
 
-- [] `/playlists` - Shows the current playlists
+- [ ] `/playlists` - Shows the current playlists
 
-- [] `/playlist` - Shows a playlist
+- [ ] `/playlist` - Shows a playlist
 
-- [] `/createplaylist` - Creates a playlist
+- [ ] `/createplaylist` - Creates a playlist
 
-- [] `/deleteplaylist` - Deletes a playlist
+- [ ] `/deleteplaylist` - Deletes a playlist
 
-- [] `/help` - Shows the help menu
+- [ ] `/help` - Shows the help menu
 
 ## Contributing
 
