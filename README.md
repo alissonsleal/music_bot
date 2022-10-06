@@ -48,11 +48,11 @@ yarn start
 
 - [x] `/pause` - Pauses the music
 
-- [ ] `/resume` - Resumes the music
+- [x] `/resume` - Resumes the music
 
 - [ ] `/volume` - Changes the volume
 
-- [ ] `/loop` - Loops the current song
+- [x] `/loop` - Loops the current song
 
 - [ ] `/shuffle` - Shuffles the queue
 
