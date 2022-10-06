@@ -1,8 +1,8 @@
 const { SlashCommandBuilder } = require('@discordjs/builders')
 import { EmbedBuilder, Interaction } from 'discord.js'
 
-export const pause = {
-  data: new SlashCommandBuilder().setName('pause').setDescription('Pause the current playing song.'),
+export const resume = {
+  data: new SlashCommandBuilder().setName('resume').setDescription('Resume the current playing song.'),
   async execute(interaction: Interaction) {
     if (!interaction.isCommand()) return
 
@@ -16,21 +16,19 @@ export const pause = {
       })
     }
 
-    const success = queue.setPaused(true)
+    const success = queue.setPaused(false)
 
     const currentTrack = queue.current
 
     const successEmbed = new EmbedBuilder()
-      .setTitle('Paused song')
-      .setDescription(
-        `[${currentTrack.title}](${currentTrack.url})\n\nPaused by ${interaction.user}\n\n Use \`/resume\` to resume the song.`,
-      )
+      .setTitle('Resumed song')
+      .setDescription(`[${currentTrack.title}](${currentTrack.url})`)
       .setThumbnail(currentTrack.thumbnail)
       .setColor('#9e59ee')
 
     const errorEmbed = new EmbedBuilder()
       .setTitle('Error')
-      .setDescription('Could not pause the song.')
+      .setDescription('Could not resume the song.')
       .setColor('#f33e3e')
 
     return interaction.reply({
