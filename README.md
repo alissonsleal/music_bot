@@ -44,9 +44,9 @@ yarn start
 
 - [x] `/queue` - Shows the current queue
 
-- [ ] `/nowplaying` - Shows the current song
+- [x] `/nowplaying` - Shows the current song
 
-- [ ] `/pause` - Pauses the music
+- [x] `/pause` - Pauses the music
 
 - [ ] `/resume` - Resumes the music
 
