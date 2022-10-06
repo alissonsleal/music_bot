@@ -22,7 +22,10 @@ export const pause = {
 
     const successEmbed = new EmbedBuilder()
       .setTitle('Paused song')
-      .setDescription(`[${currentTrack.title}](${currentTrack.url})`)
+      .setDescription(
+        `[${currentTrack.title}](${currentTrack.url})\n\nPaused by ${interaction.user}\n\n Use \`/resume\` to resume the song.`,
+      )
+      .setThumbnail(currentTrack.thumbnail)
       .setColor('#9e59ee')
 
     const errorEmbed = new EmbedBuilder()
