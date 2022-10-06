@@ -16,9 +16,12 @@ export const loop = {
       })
     }
 
-    // QueueRepeatMode.QUEUE if there's multiple songs in the queue
-    // QueueRepeatMode.TRACK if there's only one song in the queue
-    // QueueRepeatMode.OFF if the queue is on repeat
+    /**
+     * @description
+     * The mode of the queue, returns QueueRepeatMode.QUEUE if there's multiple
+     * songs in the queue, QueueRepeatMode.TRACK if there's only one song in the
+     * queue, QueueRepeatMode.OFF if the queue is on repeat
+     */
     const getRepeatMode = (mode: QueueRepeatMode) => {
       if ([QueueRepeatMode.QUEUE, QueueRepeatMode.TRACK].includes(mode)) {
         return QueueRepeatMode.OFF
