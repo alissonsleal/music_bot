@@ -54,6 +54,8 @@ yarn start
 
 - [x] `/loop` - Loops the current song
 
+- [x] `/clear` - Clears the queue
+
 - [ ] `/shuffle` - Shuffles the queue
 
 - [ ] `/remove` - Removes a song from the queue
