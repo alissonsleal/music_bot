@@ -84,7 +84,7 @@ client.on('interactionCreate', async (interaction) => {
   try {
     console.log(`[⚡ Discord] Executing command "${commandName}" from ${interaction.user.tag}`)
 
-    await command[commandName].execute(interaction)
+    await command[commandName].execute(interaction, client)
   } catch (error: any) {
     console.error(
       `[⚡ Discord] Error while executing command "${commandName}" from ${interaction.user.tag}, Error: ${error.stack}`,

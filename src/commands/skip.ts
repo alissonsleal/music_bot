@@ -1,3 +1,5 @@
+import { EmbedBuilder } from 'discord.js'
+import { usePlayer } from 'discord-player'
 import { Interaction } from 'discord.js'
 
 const { SlashCommandBuilder } = require('@discordjs/builders')
@@ -5,23 +7,35 @@ const { SlashCommandBuilder } = require('@discordjs/builders')
 export const skip = {
   data: new SlashCommandBuilder().setName('skip').setDescription('Skip the current song'),
   async execute(interaction: Interaction) {
-    if (!interaction.isCommand()) return
+    const player = usePlayer(interaction.guildId)
 
-    // @ts-ignore
-    const queue = interaction.client.player.getQueue(interaction.guildId)
-
-    if (!queue || !queue.playing) {
-      return interaction.reply({
-        content: 'No music is being played!',
-        ephemeral: true,
-      })
+    if (!player) {
+      return interaction.isRepliable() && interaction.reply('No player found!')
     }
 
-    const success = queue.skip()
+    if (!player.queue.currentTrack) {
+      return interaction.isRepliable() && interaction.reply('No track is currently playing!')
+    }
 
-    return interaction.reply({
-      content: success ? 'Skipped the song!' : 'Something went wrong!',
-      ephemeral: true,
-    })
+    const { currentTrack } = player.queue || {}
+
+    player.queue.node.skip()
+
+    return (
+      interaction.isRepliable() &&
+      interaction.reply({
+        embeds: [
+          new EmbedBuilder()
+            .setTitle('Skipped')
+            .setDescription(`[${currentTrack.title}](${currentTrack.url})`)
+            .setColor('#9e59ee')
+            .setThumbnail(currentTrack.thumbnail)
+            .setFooter({
+              text: `Requested by ${interaction.user.username}`,
+            })
+            .setTimestamp(),
+        ],
+      })
+    )
   },
 }
